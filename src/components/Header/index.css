@@ -1,0 +1,24 @@
+.mobile-menu {
+  width: 80%;
+  max-width: 468px;
+}
+
+li {
+  list-style-type: none;
+}
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.desktop-menu {
+  width: 100%;
+  max-width: 1110px;
+}
+
+@media screen and (max-width: 767px) {
+  .desktop-menu {
+    display: none;
+  }
+}

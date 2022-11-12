@@ -1,0 +1,4 @@
+.profile-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  min-height: 50vh;
+}
