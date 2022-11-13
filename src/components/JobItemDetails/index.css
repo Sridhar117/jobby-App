@@ -1,0 +1,7 @@
+.jobs-bg-specific {
+  min-height: 100vh;
+  background-color: black;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+}

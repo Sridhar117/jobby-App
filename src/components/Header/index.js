@@ -1,60 +1,61 @@
-import {Link, withRouter} from 'react-router-dom'
 import Cookies from 'js-cookie'
-
 import {AiFillHome} from 'react-icons/ai'
-import {BsFillBriefcaseFill} from 'react-icons/bs'
 import {FiLogOut} from 'react-icons/fi'
-
+import {BsFillBriefcaseFill} from 'react-icons/bs'
+import {Link, withRouter} from 'react-router-dom'
 import './index.css'
 
 const Header = props => {
-  const logout = () => {
+  const onLogout = () => {
     const {history} = props
-
     Cookies.remove('jwt_token')
-
     history.replace('/login')
   }
 
   return (
-    <div>
+    <nav className="navbar">
       <Link to="/">
         <img
+          className="header-logo"
           src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
           alt="website logo"
         />
       </Link>
-      <ul className="mobile-menu">
+      <ul className="nav-options-list">
         <li>
           <Link to="/">
-            <AiFillHome />
+            <AiFillHome fill="white" size="20" />
           </Link>
         </li>
         <li>
           <Link to="/jobs">
-            <BsFillBriefcaseFill />
+            <BsFillBriefcaseFill fill="white" size="20" />
           </Link>
         </li>
         <li>
-          <button type="button" onClick={logout}>
-            <FiLogOut />
+          <button type="button" className="logout-button" onClick={onLogout}>
+            <FiLogOut size="20" />
           </button>
         </li>
       </ul>
-      <ul className="desktop-menu">
-        <li>
-          <Link to="/">Home</Link>
+      <ul className="nav-items-lg">
+        <li className="para">
+          <Link to="/" className="link-item">
+            <p>Home</p>
+          </Link>
         </li>
-        <li>
-          <Link to="/jobs">Jobs</Link>
-        </li>
-        <li>
-          <button type="button" onClick={logout}>
-            Logout
-          </button>
+        <li className="para">
+          <Link to="/jobs" className="link-item">
+            <p>Jobs</p>
+          </Link>
         </li>
       </ul>
-    </div>
+      <div className="logout-button-lg-container">
+        <button type="button" className="logout-btn-lg" onClick={onLogout}>
+          Logout
+        </button>
+      </div>
+    </nav>
   )
 }
 

@@ -1,0 +1,16 @@
+.list-item {
+  font-family: 'Roboto';
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.checkbox-el {
+  height: 17px;
+  width: 17px;
+  margin-right: 4%;
+  margin-bottom: 2%;
+}
+.label-el {
+  font-size: 15px;
+}
