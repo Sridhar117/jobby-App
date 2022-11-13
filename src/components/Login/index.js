@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
+import {Redirect} from 'react-router-dom'
 
 class Login extends Component {
   state = {username: '', password: '', showSubmitError: false, errorMsg: ''}
@@ -42,6 +43,10 @@ class Login extends Component {
 
   render() {
     const {username, password, showSubmitError, errorMsg} = this.state
+    const jwtToken = Cookies.get('jwt_token')
+    if (jwtToken !== undefined) {
+      return <Redirect to="/" />
+    }
     return (
       <form onSubmit={this.submitForm}>
         <img
